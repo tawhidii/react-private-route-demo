@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGoogle,faMicrosoft} from '@fortawesome/free-brands-svg-icons'
  
 
-const Login = () => {
+const Register = () => {
     return (
         <div className="login-container">
          <div className='login'>
@@ -12,7 +12,7 @@ const Login = () => {
              <input type="text" placeholder="Name"/>
              <input type="password" placeholder="Password"/>
              <input type="password" placeholder="Confirm password"/>
-             <button type="submit">Submit</button>
+             <button type="submit">Register</button>
          </div>
          <div className="social-auth">
              <button className="google"> <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>  Google Login</button>
@@ -22,4 +22,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
