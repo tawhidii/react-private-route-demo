@@ -11,8 +11,8 @@ import Pizza from './components/Pizza/Pizza';
 import Steak from './components/Steak/Steak';
 import Drink from './components/Drink/Drink';
 import Burger from './components/Burger/Burger';
-import Login from './components/Register/Login';
-import Register from './components/Register/Login';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -40,6 +40,10 @@ function App() {
 
         <Route path='/drinks'>
           <Drink></Drink>
+        </Route>
+
+        <Route path="/login">
+          <Login/>
         </Route>
 
         <Route path="/register">

@@ -1,13 +1,13 @@
 import React from 'react';
-import './Login.css'
+import './Register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGoogle,faMicrosoft} from '@fortawesome/free-brands-svg-icons'
  
 
 const Register = () => {
     return (
-        <div className="login-container">
-         <div className='login'>
+        <div className="register-container">
+         <div className='register'>
              <input type="text"  placeholder="Enter Email Address"/>
              <input type="text" placeholder="Name"/>
              <input type="password" placeholder="Password"/>
@@ -15,8 +15,8 @@ const Register = () => {
              <button type="submit">Register</button>
          </div>
          <div className="social-auth">
-             <button className="google"> <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>  Google Login</button>
-             <button className="microsoft"><FontAwesomeIcon icon={faMicrosoft}></FontAwesomeIcon> Microsoft Login</button>
+             <button className="google"> <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>   Continue with Google </button>
+             <button className="microsoft"><FontAwesomeIcon icon={faMicrosoft}></FontAwesomeIcon> Continue with Microsoft</button>
          </div>
         </div>
     );
