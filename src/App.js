@@ -11,7 +11,8 @@ import Pizza from './components/Pizza/Pizza';
 import Steak from './components/Steak/Steak';
 import Drink from './components/Drink/Drink';
 import Burger from './components/Burger/Burger';
-import Login from './components/Login/Login';
+import Login from './components/Register/Login';
+import Register from './components/Register/Login';
 
 function App() {
   return (
@@ -41,8 +42,8 @@ function App() {
           <Drink></Drink>
         </Route>
 
-        <Route path="/login">
-          <Login/>
+        <Route path="/register">
+          <Register/>
         </Route>
 
         <Route path="*">
