@@ -39,6 +39,12 @@
     color:white;
     border-bottom: 3px solid tomato;
 }
+.navbar button a{
+    border-bottom: none;
+}
 .navbar button:hover{
     background-color: green;
+}
+.navbar button a:hover{
+    border-bottom: none;
 }

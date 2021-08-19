@@ -10,7 +10,7 @@ const Header = () => {
             <li><Link to='/services'>Services</Link></li>
             <li><Link to='/blog'>Blog</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <button>Login</button>
+            <button><Link to='/login'>Login</Link></button>
             </div>
         </div>
     );

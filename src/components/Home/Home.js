@@ -16,7 +16,7 @@ const Home = () => {
         </div>
         </Link>
 
-        <Link to='/burger/'>
+        <Link to='/burger'>
         <div className="food-item">
             <img src={burger} alt="" />
             <h3>Burger</h3>
@@ -29,6 +29,7 @@ const Home = () => {
             <h3>Pizza</h3>
         </div>
         </Link>
+        
         <Link to='/steaks'>
         <div className="food-item">
             <img src={steak} alt="" />
@@ -41,6 +42,7 @@ const Home = () => {
             <h3>Drinks</h3>
         </div>
         </Link>
+       
     </div>
     );
 };
