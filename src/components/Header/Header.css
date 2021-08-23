@@ -1,0 +1,31 @@
+.nav-custom{
+    background-color:black;
+}
+.navbar-nav{
+    padding: 0.8rem;
+    gap: 40px;
+}
+.navbar-nav li a{
+    color: white!important;
+    border-bottom: 1px solid greenyellow;
+}
+.navbar-toggler{
+    background-color: honeydew;
+}
+.navbar-brand{
+    color: rgb(52, 184, 0)!important;
+    font-weight: 500;
+}
+.navbar-nav .nav-login a{
+    border:1px solid greenyellow;
+    width: 150px;
+    text-align: center;
+    
+}
+.navbar-nav .nav-login a:hover{
+    border:1px solid rgb(213, 168, 255);
+    width: 150px;
+    text-align: center;
+    color: chocolate!important;
+   
+}
