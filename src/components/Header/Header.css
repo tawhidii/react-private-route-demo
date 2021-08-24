@@ -29,3 +29,9 @@
     color: chocolate!important;
    
 }
+.navbar button{
+    background: black;
+}
+.navbar-toggler-icon{
+    background-color: chartreuse!important;
+}

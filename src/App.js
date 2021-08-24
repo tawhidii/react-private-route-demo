@@ -8,20 +8,23 @@ import {
 import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import Login from './components/Login/Login';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 
 function App() {
   return (
     <Router>
-      <Header></Header>
+      <Header/>
         <Switch>
           <Route exact path="/">
-            <HomePage></HomePage>
+           <HomePage/>
           </Route>
           <Route path="/login">
-            <Login></Login>
+            <Login/>
           </Route>
-          
+          <Route path="/products/:Id">
+            <ProductDetails/>
+          </Route>
         </Switch>
     </Router>
   );

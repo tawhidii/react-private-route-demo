@@ -1,7 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './ProductList.css'
 const ProductList = (props) => {
-    const {title,image,price} = props.product
+    const {id,title,image,price} = props.product
+    const history = useHistory()
+    const handleProductDetail = (id) => {
+        history.push(`products/${id}`)
+
+    }
     return (
         <div className="products-list">
             <img src={image} alt="" />
@@ -9,7 +15,7 @@ const ProductList = (props) => {
             <p>Price: {price}$</p>
         <div className="p-button">
             <button>Buy Now</button>
-            <button>Details</button>
+            <button onClick={()=>handleProductDetail(id)}>Details</button>
         </div>
         </div>
     );
