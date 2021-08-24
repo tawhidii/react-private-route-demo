@@ -1,0 +1,56 @@
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.login-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: rgb(38, 131, 38);
+}
+input{
+    padding: 10px 40px;
+    border-top: none;
+    border-left: none;
+    border-right:none ;
+    border-bottom: 1px solid green;
+    outline: none;
+}
+input::placeholder{
+    color:rgb(151, 150, 150);
+}
+.post-btn{
+    border:1px solid green;
+    background: rgb(96, 189, 96);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.post-btn:hover{
+    border:1px solid indigo;
+    background: rgb(189, 116, 241);
+}
+.social-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap:10px;
+
+}
+.social-login button{
+    height: 50px;
+    width: 335px;
+    border:1px solid green;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  
+}
+.social-login button img{
+    height: 20px;
+    margin-right: 10px;
+}

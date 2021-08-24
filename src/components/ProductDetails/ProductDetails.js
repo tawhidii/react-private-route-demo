@@ -20,7 +20,7 @@ const ProductDetails = () => {
                 </div>
                 <div className="col-lg-5 col-md-12 col-12 details">
                     <h4>{title}</h4>
-                    <p>Price : {price}</p>
+                    <p>Price : {price}$</p>
                     <p>{description}</p>
                     <button>Buy !!</button>
                 </div> 
