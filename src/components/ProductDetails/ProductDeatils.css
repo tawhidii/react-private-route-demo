@@ -1,0 +1,18 @@
+.product-details img{
+    height: 400px;
+    width: 400px;
+}
+.details{
+    margin-top: 100px;
+}
+.details button{
+    padding: 10px 40px;
+    border: 1px solid green;
+    color: white;
+    background: rgb(23, 173, 23);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.details button:hover{
+    background: indigo;
+}
