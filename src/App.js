@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import Login from './components/Login/Login';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import Register from './components/Register/Register';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
         <Switch>
           <Route exact path="/">
            <HomePage/>
+          </Route>
+          <Route path="/register">
+            <Register/>
           </Route>
           <Route path="/login">
             <Login/>
