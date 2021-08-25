@@ -2,11 +2,11 @@ import React from 'react';
 import './Login.css'
 import googlePng from '../../icons/search.png'
 import microsoftPng from '../../icons/microsoft.png'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <div>
-           
             <div className="login-form">
 
                 <form action="">
@@ -21,6 +21,10 @@ const Login = () => {
                 <h6>Or</h6>
                 <button><img src={googlePng} alt="google" /> Continue with Google</button>
                 <button><img src={microsoftPng} alt="google" /> Continue with Microsoft</button>
+                <br />
+                <div className="subtext">
+                    <h6>Need an account?</h6> <Link to="/register"><h6> Click here !!</h6></Link>
+                </div>
             </div>
         </div>
 

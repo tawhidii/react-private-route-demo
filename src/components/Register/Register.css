@@ -1,14 +1,14 @@
 
-.login-form{
+.register-form{
     display: flex;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
-.login-form form{
+.register-form form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     color: rgb(38, 131, 38);
 }
 input{
@@ -53,8 +53,4 @@ input::placeholder{
 .social-login button img{
     height: 20px;
     margin-right: 10px;
-}
-
-.subtext{
-    display: flex;
 }
