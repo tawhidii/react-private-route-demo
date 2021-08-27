@@ -21,7 +21,7 @@ const Register = () => {
     }
     // Handle form Submit 
     const handleSubmit = (event) =>{
-        createUser(user.fullName,user.password)
+        createUser(user.email,user.password)
         event.preventDefault()
         event.target.reset()
         
