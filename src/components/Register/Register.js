@@ -1,8 +1,16 @@
 import React from 'react';
 import './Register.css'
+
 import googlePng from '../../icons/search.png'
 import microsoftPng from '../../icons/microsoft.png'
 import { useState } from 'react';
+import firebaseConfig from '../../firebase.config';
+import { initializeApp } from 'firebase/app'
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+
+initializeApp(firebaseConfig)
+const auth = getAuth()
+
 const Register = () => {
     // Intialize state or user obj
     const [user,setUser] = useState({
@@ -30,6 +38,7 @@ const Register = () => {
     // Normal User creation 
     const createUser = (name,email) =>{
         console.log(name,email)
+        // createUserWithEmailAndPassword(auth,name,email)
     }
 
 
