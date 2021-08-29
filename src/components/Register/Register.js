@@ -6,7 +6,10 @@ import microsoftPng from '../../icons/microsoft.png'
 import { useState } from 'react';
 import firebaseConfig from '../../firebase.config';
 import { initializeApp } from 'firebase/app'
-import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,
+    updateProfile,
+    signInWithPopup,
+    GoogleAuthProvider } from "firebase/auth";
 
 initializeApp(firebaseConfig)
 const auth = getAuth()
@@ -20,7 +23,9 @@ const Register = () => {
         password:"",
         confirmPassword:"",
         photo:"",
-        success:false
+        success:false,
+        message:"",
+
     })
     // Handle data submit 
     const handleOnBlur = (event) => {
@@ -46,8 +51,13 @@ const Register = () => {
             updateUserProfile(newUserInfo.fullName)
 
         })
+        .catch(error=>{
+            let newUserInfo = {...user}
+            newUserInfo.message = error.code
+            setUser(newUserInfo)
+            
+        })
     }
-    console.log(auth.currentUser)
     
     // Upadate User profile (anytime)
     const updateUserProfile = name =>{
@@ -63,7 +73,34 @@ const Register = () => {
         })
     }
 
+    // Social authentication (with google and microsoft)
+    const socialAuth = providerName =>{
+        if(providerName === 'google'){
+            const provider = new GoogleAuthProvider()
+            signInWithPopup(auth,provider)
+            .then(result=>{
+                console.log(result.user)
+                const {displayName,email,photoURL} = result.user
+                const userInfo = {
+                    isSignIn:true,
+                    email:email,
+                    fullName:displayName,
+                    photo:photoURL,
+        
+                }
+                setUser(userInfo)
+            })
+            .catch(error=>{
+                console.log(error.message)
+            })
 
+        }
+        if(providerName === 'microsoft'){
+            console.log('Msn calling')
+        }
+    }
+
+    console.log('User info ==> ',user)
     return (
         <div>
             <div className="login-form">
@@ -76,15 +113,17 @@ const Register = () => {
                     <input name="confirmPassword" onBlur={handleOnBlur} type="password" placeholder="Re-type Password" required/>
                     <input className="post-btn" type="submit" value="Register" />
                     {
-                        user.success && <p style={{color:'green'}}>Registration Successful !</p>
+                        user.success ? <p style={{color:"green"}}>Registration Sucessful</p> : 
+                                    <p style={{color:'red'}}>{user.message}</p>  
                     }
                     
                 </form>       
             </div>
             
             <div className="social-login">
-                <button><img src={googlePng} alt="google" /> Continue with Google</button>
-                <button><img src={microsoftPng} alt="google" /> Continue with Microsoft</button>
+                
+                <button onClick={()=>socialAuth('google')} type="submit"><img src={googlePng} alt="google"/> Continue with Google</button>
+                <button onClick={()=>socialAuth('microsoft')}type="submit"><img src={microsoftPng} alt="microsoft" onClick={()=>socialAuth('microsoft')} /> Continue with Microsoft</button>
             </div>
           
         </div>
