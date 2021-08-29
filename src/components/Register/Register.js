@@ -9,7 +9,9 @@ import { initializeApp } from 'firebase/app'
 import { getAuth, createUserWithEmailAndPassword,
     updateProfile,
     signInWithPopup,
-    GoogleAuthProvider } from "firebase/auth";
+    GoogleAuthProvider,
+    OAuthProvider
+ } from "firebase/auth";
 
 initializeApp(firebaseConfig)
 const auth = getAuth()
@@ -96,7 +98,24 @@ const Register = () => {
 
         }
         if(providerName === 'microsoft'){
-            console.log('Msn calling')
+            const provider = new OAuthProvider('microsoft.com');
+            signInWithPopup(auth,provider)
+            .then(result=>{
+                console.log(result.user)
+                const {displayName,email,photoURL} = result.user
+                const userInfo = {
+                    isSignIn:true,
+                    email:email,
+                    fullName:displayName,
+                    photo:photoURL,
+        
+                }
+                setUser(userInfo)
+            })
+            .catch(error=>{
+                console.log(error.message)
+            })
+
         }
     }
 
