@@ -2,7 +2,7 @@ import React from 'react';
 import './Register.css'
 
 import googlePng from '../../icons/search.png'
-import microsoftPng from '../../icons/microsoft.png'
+import twitterPng from '../../icons/twitter.png'
 import { useState } from 'react';
 import firebaseConfig from '../../firebase.config';
 import { initializeApp } from 'firebase/app'
@@ -10,7 +10,7 @@ import { getAuth, createUserWithEmailAndPassword,
     updateProfile,
     signInWithPopup,
     GoogleAuthProvider,
-    OAuthProvider
+    TwitterAuthProvider
  } from "firebase/auth";
 
 initializeApp(firebaseConfig)
@@ -97,8 +97,8 @@ const Register = () => {
             })
 
         }
-        if(providerName === 'microsoft'){
-            const provider = new OAuthProvider('microsoft.com');
+        if(providerName === 'twitter'){
+            const provider = new TwitterAuthProvider()
             signInWithPopup(auth,provider)
             .then(result=>{
                 console.log(result.user)
@@ -142,7 +142,7 @@ const Register = () => {
             <div className="social-login">
                 
                 <button onClick={()=>socialAuth('google')} type="submit"><img src={googlePng} alt="google"/> Continue with Google</button>
-                <button onClick={()=>socialAuth('microsoft')}type="submit"><img src={microsoftPng} alt="microsoft" onClick={()=>socialAuth('microsoft')} /> Continue with Microsoft</button>
+                <button onClick={()=>socialAuth('twitter')}type="submit"><img src={twitterPng} alt="microsoft" onClick={()=>socialAuth('microsoft')} /> Continue with Twitter</button>
             </div>
           
         </div>
