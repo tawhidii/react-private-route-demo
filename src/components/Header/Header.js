@@ -1,7 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import './Header.css'
 const Header = () => {
+    const [loggedInuser] = useContext(UserContext)
+    const {displayName} = loggedInuser
     return (
         <nav className="navbar navbar-expand-lg navbar-light nav-custom  sticky-top">
             <Link className="navbar-brand" to="/">Fake Store</Link>
@@ -20,9 +24,12 @@ const Header = () => {
                     <li className="nav-item">
                     <Link className="nav-link" to="/contact">Contact</Link>
                     </li>
-                    <li className="nav-item nav-login">
+                    {
+                        displayName ? <h5 style={{color:'greenyellow'}}>{displayName}</h5>:<li className="nav-item nav-login">
                         <Link className="nav-link" to="/login">Login</Link>
                     </li>
+                    }
+                 
                 </ul>
 
         </div>
