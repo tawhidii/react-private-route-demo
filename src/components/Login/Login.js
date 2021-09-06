@@ -20,7 +20,7 @@ const Login = () => {
             <div className="social-login">
                 <h6>Or</h6>
                 <button><img src={googlePng} alt="google" /> Continue with Google</button>
-                <button><img src={twitterPng} alt="google" /> Continue with Twitter</button>
+                <button><img src={twitterPng} alt="twitter" /> Continue with Twitter</button>
                 <br />
                 <div className="subtext">
                     <h6>Need an account?</h6> <Link to="/register"><h6> Click here !!</h6></Link>
